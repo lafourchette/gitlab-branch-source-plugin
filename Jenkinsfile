@@ -109,7 +109,7 @@ pipeline {
                         script {
                             sh """
                             cd gitlab-branch-source-plugin
-                            aws s3 cp target/gitlab-branch-source.hpi s3://trf-jenkins-gitlab-branch-source-plugin/gitlab-branche-source-${env.BRANCH_NAME}.hpi
+                            aws s3 cp target/gitlab-branch-source.hpi s3://trf-jenkins-gitlab-branch-source-plugin/${env.BRANCH_NAME}.hpi
                             """
                         }
                     }
