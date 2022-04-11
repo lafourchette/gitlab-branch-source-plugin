@@ -118,13 +118,15 @@ public class GitLabMergeRequestCauseData {
             this.variables.put("GITLAB_LABEL_TYPE_" + i, defaultLabelString(mergeRequestEvent.getLabels().get(i).getType()));
             this.variables.put("GITLAB_LABEL_GROUP_ID_" + i, defaultIntString(mergeRequestEvent.getLabels().get(i).getGroupId()));
         }
-        if(mergeRequestEvent.getChanges().getUpdatedById() != null) {
-            this.variables.put("GITLAB_CHANGES_UPDATED_BY_ID_PREV", defaultIntString(mergeRequestEvent.getChanges().getUpdatedById().getPrevious()));
-            this.variables.put("GITLAB_CHANGES_UPDATED_BY_ID_CURR", defaultIntString(mergeRequestEvent.getChanges().getUpdatedById().getCurrent()));
-        }
-        if(mergeRequestEvent.getChanges().getUpdatedAt() != null) {
-            this.variables.put("GITLAB_CHANGES_UPDATED_AT_PREV", defaultDateString(mergeRequestEvent.getChanges().getUpdatedAt().getPrevious()));
-            this.variables.put("GITLAB_CHANGES_UPDATED_AT_CURR", defaultDateString(mergeRequestEvent.getChanges().getUpdatedAt().getPrevious()));
+        if(mergeRequestEvent.getChanges() != null) {
+            if(mergeRequestEvent.getChanges().getUpdatedById() != null) {
+                this.variables.put("GITLAB_CHANGES_UPDATED_BY_ID_PREV", defaultIntString(mergeRequestEvent.getChanges().getUpdatedById().getPrevious()));
+                this.variables.put("GITLAB_CHANGES_UPDATED_BY_ID_CURR", defaultIntString(mergeRequestEvent.getChanges().getUpdatedById().getCurrent()));
+            }
+            if(mergeRequestEvent.getChanges().getUpdatedAt() != null) {
+                this.variables.put("GITLAB_CHANGES_UPDATED_AT_PREV", defaultDateString(mergeRequestEvent.getChanges().getUpdatedAt().getPrevious()));
+                this.variables.put("GITLAB_CHANGES_UPDATED_AT_CURR", defaultDateString(mergeRequestEvent.getChanges().getUpdatedAt().getPrevious()));
+            }
         }
     }
 
