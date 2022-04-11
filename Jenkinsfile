@@ -51,7 +51,7 @@ pipeline {
                                 cpu: 1
                                 memory: 1Gi
                           - name: maven
-                            image: maven
+                            image: maven:3.8.5-jdk-11
                             imagePullPolicy: Always
                             command:
                             - cat

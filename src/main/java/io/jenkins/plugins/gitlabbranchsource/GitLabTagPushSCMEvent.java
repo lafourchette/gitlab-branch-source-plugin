@@ -16,7 +16,7 @@ import org.gitlab4j.api.webhook.TagPushEvent;
 import static jenkins.scm.api.SCMEvent.Type.CREATED;
 
 public class GitLabTagPushSCMEvent extends AbstractGitLabSCMHeadEvent<TagPushEvent> {
-    
+
     static final Logger LOGGER = Logger.getLogger(GitLabPushSCMEvent.class.getName());
 
     public GitLabTagPushSCMEvent(TagPushEvent tagPushEvent, String origin) {
