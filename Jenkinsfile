@@ -64,7 +64,7 @@ pipeline {
                                 cpu: 2
                                 memory: 4Gi
                           - name: aws-utils
-                            image: 226567326923.dkr.ecr.eu-west-3.amazonaws.com/core/application/aws-utils:0.0.20
+                            image: 226567326923.dkr.ecr.eu-west-3.amazonaws.com/github/lafourchette/core-image-utils/aws-utils-alpine:0.0.1
                             imagePullPolicy: Always
                             command:
                             - /bin/bash
